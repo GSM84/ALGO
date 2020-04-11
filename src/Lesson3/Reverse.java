@@ -8,19 +8,21 @@ public class Reverse {
     public static void main(String[] args) {
         Reverse test = new Reverse();
 
-        test.reverse("Негра манит аргентина");
+        System.out.println(test.reverse("Негра манит аргентина"));
 
     }
 
-    public void reverse(String _sentense){
-        System.out.println("Source sentense: " + _sentense);
+    public String reverse(String _sentense){
         for (char chr: _sentense.toCharArray()) {
             stack.push(chr);
         }
-        System.out.print("Reversed sentense: ");
+
+        StringBuilder sb = new StringBuilder();
         while (stack.size() > 0){
-            System.out.print(stack.pop());
+            sb.append(stack.pop());
         }
+
+        return sb.toString();
     }
 
 }
